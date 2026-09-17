@@ -17,7 +17,9 @@ The artifact provides two complementary evaluation paths:
 ## Artifact links
 
 - Source repository: <https://github.com/afd1479/SfS-Artifact>
-- Reserved archival DOI: <https://doi.org/10.5281/zenodo.22801028>
+-  Permanent archival record: <https://doi.org/10.5281/zenodo.22801028>
+
+- The permanent Zenodo record provides the archived snapshot of the evaluated artifact.
 
 The Zenodo DOI has been reserved so it can be embedded in the artifact. It will
 resolve after the final Zenodo record is published.
