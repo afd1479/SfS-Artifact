@@ -1,0 +1,56 @@
+# SfS artifact metadata for ACSAC 2026, following the artmeta schema.
+
+# "r" requests Reproduced; Availability is also evaluated for the public
+# GitHub/Zenodo artifact. "b" declares that the artifact contains code + data.
+badge = "r"
+artifact_url = "https://github.com/afd1479/SfS-Artifact"
+cd = "b"
+citation = """
+@inproceedings{darabseh2026sfs,
+  author    = {Ala Darabseh and Christina Pöpper},
+  title     = {Shuffling for Safeguarding (SfS): Replay Protection in Wireless Broadcast Systems},
+  booktitle = {Annual Computer Security Applications Conference (ACSAC)},
+  year      = {2026}
+}
+"""
+license_url = "https://github.com/afd1479/SfS-Artifact/blob/main/README.md#license"
+
+infrastructure_constraints = "The primary, deterministic reproduction of Figures 3--11 runs on a standard workstation without special hardware. Fresh over-the-air experiments require three Raspberry Pi devices with 2.4 GHz Wi-Fi interfaces and drivers supporting IBSS/ad-hoc mode. That physical radio testbed is not reproducible on an ordinary public cloud VM."
+infrastructure_access = "No private infrastructure or author-hosted SSH service is required for the primary offline evaluation. Evaluators may reproduce Figures 3--11 from the public data. Evaluators choosing a fresh live run must construct an equivalent three-device testbed. The access policy and rationale are documented at https://github.com/afd1479/SfS-Artifact/blob/main/HARDWARE_ACCESS.md."
+
+install_script = "https://github.com/afd1479/SfS-Artifact/blob/main/install.sh"
+use = "This research artifact supports two paths: (1) deterministic reproduction of the paper's Figures 3--11 from the supplied experimental workbooks and (2) controlled live evaluation of the parameterized SfS sender, receiver, ordinary-replay attacker, permutation-aware attacker, and performance programs on a three-Raspberry-Pi testbed. It is not production software. The embedded experimental RSA key material and Python pickle serialization must be used only on a controlled, isolated network. The laboratory coordinates are metadata rather than live GPS/GNSS measurements. A new live testbed must calibrate and pass its own mean end-to-end delay instead of treating the supplied 0.29 s value as universal."
+destructive = "The offline workflow overwrites generated contents under SfS_Artifact_Reproduction/figures/ and SfS_Artifact_Reproduction/derived/ but does not modify raw workbooks under data/. Live sender and receiver programs can overwrite an existing workbook if the same --output path is reused; use a distinct filename for each run. Raspberry Pi network setup includes privileged package-installation and network-configuration commands."
+
+claim1 = "The supplied raw experimental data and analysis program reproduce the quantitative results plotted in Figures 3--11 of the paper."
+script1 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim1_figures_3_11/run.sh"
+expected1 = "Run bash install.sh analysis and then bash claims/claim1_figures_3_11/run.sh from the repository root. The command should exit successfully, write PNG and PDF plots under SfS_Artifact_Reproduction/figures/, write numerical CSV inputs under SfS_Artifact_Reproduction/derived/, and create derived/validation_report.csv. PLOT_MAPPING.md maps outputs to paper figures. Minor Matplotlib rendering differences are acceptable; derived counts and rates are the primary evidence."
+
+claim2 = "The implementation executes legitimate traffic and ordinary delayed replay experiments, and the receiver records sequence-verification outcomes for received packets."
+script2 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim2_ordinary_replay/README.md"
+expected2 = "The deterministic evidence is reproduced from the supplied no-attack and ordinary-replay workbooks. For optional live validation, follow Scaled Runs B and C. With --replay-every 20, the attacker selects every twentieth captured packet. The receiver workbook should contain original observations and any delivered replays with their verification outcomes. Exact timestamps and delivery counts may vary with the testbed."
+
+claim3 = "The permutation-aware attacker can update the public time-derived permutation without the private signing key, while the receiver still evaluates modified delayed packets under the configured THV."
+script3 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim3_permutation_aware_replay/README.md"
+expected3 = "Figure 11 is reproduced deterministically from the supplied permutation-aware workbooks. As a spot check, THV 800 ms at replay delay 900 ms contains 1,000 legitimate and 50 replay observations, with replay TN=21, FP=29, and TNR=0.42. Optional Scaled Run D produces a receiver workbook with original traffic and any delivered modified replays."
+
+claim4 = "The instrumented sender and receiver report SfS signing, verification, throughput, and end-to-end latency measurements for the prototype."
+script4 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim4_performance/README.md"
+expected4 = "Follow Scaled Run A using sender_throughput.py and receiver_throughput.py without an active attacker. Both programs should save workbooks and print timing summaries. Exact throughput and latency depend on Raspberry Pi model, OS and Python versions, CPU load, storage, Wi-Fi conditions, placement, packet loss, and clock synchronization; the documented measurement boundaries, rather than bit-identical values, are the validation target."
+
+hw = """
+Offline Figures 3--11: a standard workstation; no GPU is required.
+Optional fresh over-the-air experiments: three Raspberry Pi devices, each with a 2.4 GHz Wi-Fi interface and driver supporting IBSS/ad-hoc mode; three power supplies; three microSD cards; and an isolated test area. The reported laboratory arrangement used static line of sight with approximately 3--5 m separation. Local console or management access is required for setup.
+"""
+
+sw = """
+Offline reproduction: Python 3.10 or newer and the packages in SfS_Artifact_Reproduction/requirements.txt, including matplotlib>=3.7.
+Raspberry Pi testbed: Raspberry Pi OS; Python 3; the Python dependencies listed in the supplied requirements files; and chrony, iw, wireless-tools, and NetworkManager/nmcli. The Wi-Fi driver must support IBSS/ad-hoc mode. No paid software is required.
+"""
+
+api = "No API keys, paid services, accounts, or production credentials are required."
+gui = "n"
+
+provenance = "https://github.com/afd1479/SfS-Artifact/blob/main/README.md#data-provenance"
+ethics = "https://github.com/afd1479/SfS-Artifact/blob/main/README.md#data-ethics-and-privacy"
+readme = "https://github.com/afd1479/SfS-Artifact/blob/main/README.md"

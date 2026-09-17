@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the associated paper and the archived artifact."
+title: "Shuffling for Safeguarding (SfS): Research Artifact"
+type: software
+authors:
+  - family-names: Darabseh
+    given-names: Ala
+  - family-names: Pöpper
+    given-names: Christina
+version: 1.0.0
+repository-code: "https://github.com/afd1479/SfS-Artifact"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22801028"
+    description: "Reserved archival DOI; active after Zenodo publication"
+license:
+  - MIT
+  - CC-BY-4.0
+preferred-citation:
+  type: conference-paper
+  title: "Shuffling for Safeguarding (SfS): Replay Protection in Wireless Broadcast Systems"
+  authors:
+    - family-names: Darabseh
+      given-names: Ala
+    - family-names: Pöpper
+      given-names: Christina
+  conference:
+    name: "Annual Computer Security Applications Conference (ACSAC)"
+  year: 2026

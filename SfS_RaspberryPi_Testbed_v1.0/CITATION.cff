@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the associated paper."
+title: "Shuffling for Safeguarding (SfS): Raspberry Pi Testbed Artifact"
+type: software
+authors:
+  - family-names: Darabseh
+    given-names: Ala
+  - family-names: Pöpper
+    given-names: Christina
+preferred-citation:
+  type: conference-paper
+  title: "Shuffling for Safeguarding (SfS): Replay Protection in Wireless Broadcast Systems"
+  authors:
+    - family-names: Darabseh
+      given-names: Ala
+    - family-names: Pöpper
+      given-names: Christina
+  conference:
+    name: "Annual Computer Security Applications Conference (ACSAC)"
+  year: 2026

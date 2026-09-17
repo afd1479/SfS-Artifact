@@ -1,0 +1,3 @@
+rsa
+pandas
+openpyxl
