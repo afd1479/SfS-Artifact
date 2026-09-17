@@ -12,7 +12,7 @@ repository-code: "https://github.com/afd1479/SfS-Artifact"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22801028"
-    description: "Reserved archival DOI; active after Zenodo publication"
+    description: "Permanent archival DOI for this artifact"
 license:
   - MIT
   - CC-BY-4.0
