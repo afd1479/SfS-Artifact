@@ -1,5 +1,7 @@
 # SfS artifact metadata for ACSAC 2026, following the artmeta schema.
 
+# ACSAC artifact-evaluation guide: start with README.md in the artifact root; additional evaluation instructions are provided in Appendix C of ACSAC2026_372_SfS_Paper_with_Artifact_Appendix.pdf.
+
 # "r" requests Reproduced; Availability is also evaluated for the public
 # GitHub/Zenodo artifact. "b" declares that the artifact contains code + data.
 badge = "r"
@@ -32,8 +34,7 @@ expected2 = "The deterministic evidence is reproduced from the supplied no-attac
 
 claim3 = "The permutation-aware attacker can update the public time-derived permutation without the private signing key, while the receiver still evaluates modified delayed packets under the configured THV."
 script3 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim3_permutation_aware_replay/README.md"
-expected3 = "Figure 11 is reproduced deterministically from the supplied permutation-aware workbooks. As a spot check, THV 800 ms at replay delay 900 ms contains 1,000 legitimate and 50 replay observations, with replay TN=21, FP=29, and TNR=0.42. Optional Scaled Run D produces a receiver workbook with original traffic and any delivered modified replays."
-
+expected3 = "Figure 11 is reproduced deterministically from the supplied permutation-aware workbooks." 
 claim4 = "The instrumented sender and receiver report SfS signing, verification, throughput, and end-to-end latency measurements for the prototype."
 script4 = "https://github.com/afd1479/SfS-Artifact/blob/main/claims/claim4_performance/README.md"
 expected4 = "Follow Scaled Run A using sender_throughput.py and receiver_throughput.py without an active attacker. Both programs should save workbooks and print timing summaries. Exact throughput and latency depend on Raspberry Pi model, OS and Python versions, CPU load, storage, Wi-Fi conditions, placement, packet loss, and clock synchronization; the documented measurement boundaries, rather than bit-identical values, are the validation target."
