@@ -5,6 +5,8 @@ This repository contains the research artifact for:
 > Ala Darabseh and Christina Pöpper, “Shuffling for Safeguarding (SfS):
 > Replay Protection in Wireless Broadcast Systems,” ACSAC 2026.
 
+ACSAC artifact evaluation: Start here. The evaluation guide is provided in Appendix C of the submitted paper PDF file. It covers installation, execution, requirements, expected outputs, claim mapping, and limitations. For evaluation without Raspberry Pi hardware, follow the offline Figure 3–11 reproduction workflow.
+
 The artifact provides two complementary evaluation paths:
 
 1. **Offline result reproduction:** regenerate the numerical tables and plots
